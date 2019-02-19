@@ -53,6 +53,7 @@ int main()
 		cout << "+";
 		box1.paint();
 
+
 		status = box1.get_user_status();
 		string text;
 		ofstream fout("txt.txt");
