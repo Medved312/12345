@@ -3,8 +3,6 @@
 #include <iostream>
 #include "main_menu.h"
 #include <cstdio>
-
-
 #include <fstream>
 
 using namespace std;
@@ -46,24 +44,23 @@ int main()
 		box1.horizontal_line();
 		cout << "+";
 	}
-	else if (status == 2) {//редактирование файла
+	else if (status == 2) {//редактирование файла 
 		system("cls");
 		cout << "+";
 		box1.horizontal_line();
 		cout << "+";
 		box1.paint();
+		cout << "\n";
 
-
-		status = box1.get_user_status();
 		string text;
 		ofstream fout("txt.txt");
-		cout << "\n";
+		
 		cin >> text;
 		fout << text; // запись строки в файл
-		fout.close(); // закрываем файл
-		box1.paint();
+		fout.close();// закрываем файл
+		
+		box1.paint();//нижняя чать интервейса 
 		cout << "+";
-
 		box1.horizontal_line();
 		cout << "+";
 	}
@@ -81,6 +78,28 @@ int main()
 		box1.paint();
 		cout << "+";
 
+		box1.horizontal_line();
+		cout << "+";
+	}
+	else if (4) {//вывод информации 
+		system("cls");//верхняя чать интервейса 
+		cout << "+";
+		box1.horizontal_line();
+		cout << "+";
+		box1.paint();
+		
+
+		string output_txt;
+		ifstream fout("txt.txt");
+
+
+		fout >> output_txt;//вывод инфрормации
+		cout << output_txt;
+		fout.close();
+
+		cout << "\n";//нижняя чать интервейса 
+		box1.paint();
+		cout << "+";
 		box1.horizontal_line();
 		cout << "+";
 	}
