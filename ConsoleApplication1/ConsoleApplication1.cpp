@@ -19,8 +19,8 @@ int main()
 	main_menu box1;
 	box1.horizontal_line();
 	cout << "+";
-	HANDLE hCon;
-	COORD cPos;
+	//HANDLE hCon;
+	//COORD cPos;
 	box1.paint();
 	box1.get_q();
 
