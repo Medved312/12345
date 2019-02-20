@@ -15,7 +15,7 @@ int main()
 	system("cls");
 	SetConsoleCP(1251);// установка кодовой страницы win-cp 1251 в поток ввода
 	SetConsoleOutputCP(1251);// установка кодовой страницы win-cp 1251 в поток вывода
-	//uiuih
+	
 	int status;
 	cout << "+";
 	main_menu box1;
