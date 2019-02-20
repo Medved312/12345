@@ -8,7 +8,7 @@ main_menu::main_menu()
  q = "| выберите команду 1-создать 2-редактировать \n 3-удалить 4-показвть содержание";//присваивание значения переменной 
 }
 void main_menu::get_q() {
-cout << q << "\t\t\t\t\t |\n";
+cout << q<<"\n";
 }
 
 int main_menu::get_user_status() {
@@ -27,5 +27,7 @@ void main_menu::horizontal_line () {
 	for (int i = 0; i < 47; i++) {
 		cout << a;
 	}
+
 }
+
 

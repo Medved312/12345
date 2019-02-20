@@ -12,6 +12,7 @@ public:
 	void get_q();
 	void paint();
 	string q;
+	
 protected:
 	int v;
 	char a;

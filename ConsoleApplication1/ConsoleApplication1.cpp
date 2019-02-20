@@ -5,24 +5,37 @@
 #include <cstdio>
 #include <fstream>
 
+//#include <windows.h>
+//#define WIDTH 80
+//#define HEIGHT 22
+
 using namespace std;
 int main()
 {
+	system("cls");
 	setlocale(LC_ALL, "Russian");
 	int status;
 	cout << "+";
 	main_menu box1;
 	box1.horizontal_line();
 	cout << "+";
-
+	HANDLE hCon;
+	COORD cPos;
 	box1.paint();
 	box1.get_q();
+
+	//hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+	//cPos.Y = HEIGHT / 1;
+	//cPos.X = (WIDTH) / 1;
+	//SetConsoleCursorPosition(hCon, cPos);
+
 	status=box1.get_user_status();
 	box1.paint();
 	cout << "+";
-
 	box1.horizontal_line();
 	cout << " +\n";
+
+	//system("pause");
 
 
 	
@@ -42,7 +55,10 @@ int main()
 		cout << "+";
 
 		box1.horizontal_line();
-		cout << "+";
+		cout << "+\n";
+
+		system("pause");
+		main();
 	}
 	else if (status == 2) {//редактирование файла 
 		system("cls");
@@ -62,7 +78,10 @@ int main()
 		box1.paint();//нижняя чать интервейса 
 		cout << "+";
 		box1.horizontal_line();
-		cout << "+";
+		cout << "+\n";
+
+		system("pause");
+		main();
 	}
 	else if (status == 3) {//удаление файла
 		system("cls");
@@ -79,7 +98,10 @@ int main()
 		cout << "+";
 
 		box1.horizontal_line();
-		cout << "+";
+		cout << "+\n";
+
+		system("pause");
+		main();
 	}
 	else if (4) {//вывод информации 
 		system("cls");//верхняя чать интервейса 
@@ -101,6 +123,9 @@ int main()
 		box1.paint();
 		cout << "+";
 		box1.horizontal_line();
-		cout << "+";
+		cout << "+\n";
+
+		system("pause");
+		main();
 	}
 }
