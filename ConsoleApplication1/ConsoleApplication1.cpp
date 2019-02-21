@@ -6,6 +6,7 @@
 #include <fstream>
 
 #include <windows.h>
+
 #define WIDTH 2 //X. столбик
 #define HEIGHT 12//Y. строчка
 
@@ -34,8 +35,8 @@ int main()
 	COORD cPos;
 
 	hCon = GetStdHandle(STD_OUTPUT_HANDLE);//перемещение курсора для ввода инф
-	cPos.Y = HEIGHT / 1;//координаты
-	cPos.X = (WIDTH) / 1;
+	cPos.Y = HEIGHT ;//координаты
+	cPos.X = (WIDTH);
 	SetConsoleCursorPosition(hCon, cPos);//хз
 
 	status=box1.get_user_status();//объект для ввода инф
@@ -77,12 +78,12 @@ int main()
 		cout << "+\n";
 
 		hCon = GetStdHandle(STD_OUTPUT_HANDLE);//перемещение курсора для ввода инф
-		cPos.Y = HEIGHT / 1;//координаты
-		cPos.X = (WIDTH) / 1;
+		cPos.Y = HEIGHT;//координаты
+		cPos.X = (WIDTH);
 		SetConsoleCursorPosition(hCon, cPos);//хз
 
-		string text;
-		ofstream fout("txt.txt");
+		string text;//переменная для инфы в файл
+		ofstream fout("txt.txt", ios_base::app);//дописыывание инф в конец файла. дляполного редактировваниея с 0 убрать  ios_base::app
 		
 		cin >> text;
 		fout << text; // запись строки в файл
@@ -118,12 +119,11 @@ int main()
 		cout << "+";
 		box1.paint();
 		
-		char output_txt[50];
+		string output_txt;
 		ifstream fout("txt.txt");
 
-		fout >> output_txt;//вывод инфрормации
-		cout << output_txt;
-		fout.getline(output_txt,50);
+		fout >> output_txt;//запись инф из файла в переменную
+		cout << output_txt;//вывод инф из переменной
 		fout.close();
 
 		cout << "\n";//нижняя чать интервейса 
