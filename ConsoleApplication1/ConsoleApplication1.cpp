@@ -2,7 +2,6 @@
 #include "pch.h"
 #include <iostream>
 #include "main_menu.h"
-#include <cstdio>
 #include <fstream>
 
 #include <windows.h>
@@ -80,7 +79,7 @@ int main()
 		hCon = GetStdHandle(STD_OUTPUT_HANDLE);//перемещение курсора для ввода инф
 		cPos.Y = HEIGHT;//координаты
 		cPos.X = (WIDTH);
-		SetConsoleCursorPosition(hCon, cPos);//хз
+		SetConsoleCursorPosition(hCon, cPos);
 
 		string text;//переменная для инфы в файл
 		ofstream fout("txt.txt", ios_base::app);//дописыывание инф в конец файла. дляполного редактировваниея с 0 убрать  ios_base::app
